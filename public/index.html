@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué Hay Hoy?</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="https://unpkg.com/pocketbase/dist/pocketbase.umd.js"></script>
+</head>
+<body>
+  <header>
+    <h1>¿Qué Hay Hoy?</h1>
+    <p class="subtitulo">Mostrando datos desde PocketBase local</p>
+    <div class="filtros">
+      <input type="text" id="buscar" placeholder="Buscar publicaciones..." />
+      <select id="filtroLugar">
+        <option value="">Todos los lugares</option>
+      </select>
+      <select id="filtroTipo">
+        <option value="">Todos los tipos</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="contenedorNoticias" class="contenedor-noticias"></div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

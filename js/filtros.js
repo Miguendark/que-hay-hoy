@@ -1,0 +1,1 @@
+// Funcionalidad de filtros y búsqueda

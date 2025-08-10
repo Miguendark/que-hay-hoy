@@ -1,0 +1,1 @@
+// Manejo de modales, animaciones y eventos de UI

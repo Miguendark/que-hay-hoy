@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "titulo": "Noticia de ejemplo 1",
+    "categoria": "Deportes"
+  },
+  {
+    "id": "2",
+    "titulo": "Noticia de ejemplo 2",
+    "categoria": "Tecnología"
+  }
+]

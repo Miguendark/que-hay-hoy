@@ -1,0 +1,97 @@
+:root{
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --chip-bg: #fff;
+  --banner: #fff3cd;
+}
+
+body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+.app-header{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--card);padding:12px 16px;border-bottom:1px solid #e6e6e6;position:sticky;top:0;z-index:30;
+}
+.app-header h1{margin:0;font-size:1.15rem;color:var(--text);padding-left:8px;}
+.hamburger{font-size:1.2rem;background:none;border:none;cursor:pointer;opacity:0.7;}
+
+.right button{background:none;border:none;font-size:1.1rem;cursor:pointer}
+
+/* offcanvas (right) */
+.offcanvas{
+  position:fixed;right:-100%;top:0;height:100%;width:320px;background:var(--card);box-shadow:-8px 0 24px rgba(0,0,0,0.12);transition:right .25s ease;z-index:60;padding:18px;overflow:auto;
+}
+.offcanvas.open{right:0}
+.offcanvas-close{position:absolute;left:12px;top:12px;border:none;background:none;font-size:1.2rem;cursor:pointer}
+.offcanvas-nav input{width:100%;padding:8px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px}
+.offcanvas-nav h3{margin:12px 0 6px 0}
+.offcanvas-nav ul{list-style:none;padding:0;margin:0}
+.offcanvas-nav li{margin:8px 0}
+
+/* API banner */
+.api-banner{background:var(--banner);color:#8a6d3b;padding:8px 12px;text-align:center;font-size:0.95rem;}
+
+/* Search + map */
+.search-map{padding:12px 16px}
+.search-row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.search-row input{flex:1;padding:10px;border-radius:10px;border:1px solid #e2e8f0}
+.search-row button{padding:10px 12px;border-radius:10px;border:1px solid #e2e8f0;background:var(--accent);color:#fff;cursor:pointer}
+.map{height:180px;border-radius:12px;overflow:hidden;border:1px solid #e6eefc;background:#e9f0ff}
+
+/* chips horizontal */
+.chips{display:flex;gap:10px;padding:10px 16px;overflow:auto;scroll-padding:10px}
+.chip{flex:0 0 auto;padding:8px 12px;background:var(--chip-bg);border-radius:999px;border:1px solid #e6e6e6;cursor:pointer;font-weight:600;color:var(--text)}
+
+/* filters row */
+.filters-row{display:flex;gap:8px;padding:0 16px 12px;align-items:center}
+.filters-row select{padding:8px;border-radius:8px;border:1px solid #e2e8f0}
+
+/* grid cards */
+.cards-grid{display:grid;gap:14px;padding:0 16px 20px;}
+
+/* Card basic */
+.card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(22,28,37,0.06);cursor:pointer;display:flex;flex-direction:column;height:100%}
+.card img{width:100%;height:120px;object-fit:cover}
+.card-body{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:1rem;color:var(--text)}
+.card p{margin:0;color:var(--muted);font-size:0.9rem}
+
+/* ver más */
+.ver-mas-wrap{text-align:center;padding:14px}
+.btn-ver-mas{padding:10px 18px;border-radius:999px;border:0;background:var(--card);box-shadow:0 6px 18px rgba(22,28,37,0.06);cursor:pointer}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.55);z-index:80}
+.modal-inner{width:92%;max-width:640px;background:var(--card);border-radius:12px;padding:16px;position:relative}
+.modal-inner img{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.modal-close{position:absolute;right:12px;top:12px;border:none;background:none;font-size:1.2rem}
+
+/* responsive rules (mobile-first) */
+/* Mobile: 3 columns small per your request */
+ @media (max-width: 420px){
+  .cards-grid{grid-template-columns:repeat(3,1fr)}
+  .card img{height:90px}
+  .map{height:140px}
+  .offcanvas{width:85%}
+}
+
+/* Tablet */
+ @media (min-width:421px) and (max-width:1024px){
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .map{height:200px}
+  .card img{height:140px}
+}
+
+/* Desktop */
+ @media (min-width:1025px){
+  .cards-grid{grid-template-columns:repeat(3,1fr);max-width:1200px;margin:0 auto}
+  .map{height:300px}
+  .card img{height:180px}
+}
+
+/* dark mode */
+body.dark{
+  --bg:#0b1220;--card:#0f1724;--text:#e6eef8;--muted:#9aa7bf;--accent:#60a5fa;--chip-bg:#0b1228;--banner:#3b2f00;
+  background:var(--bg);color:var(--text);
+}
