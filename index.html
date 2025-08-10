@@ -1,96 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>¿Qué Hay Hoy?</title>
-
-  <!-- styles -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Google Maps: reemplaza YOUR_GOOGLE_MAPS_API_KEY por tu clave -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV4BqU_6HFjbQihwRkjiylatFaXC5zqVo&callback=initMap&libraries=marker&map_ids=AIzaSyAV4BqU_6HFjbQihwRkjiylatFaXC5zqVo" async defer loading="async"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalHoy</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/darkmode.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="app-header">
-    <div class="left">
-      <h1>¿Qué Hay Hoy?</h1>
-    </div>
+    <header>
+        <img src="img/logo.png" alt="GlobalHoy" class="logo">
+        <input type="text" id="buscador" placeholder="Buscar noticias...">
+        <button id="modoOscuroBtn"></button>
+    </header>
 
-    <div class="right">
-      <button id="dark-toggle" aria-label="Modo oscuro"></button>
-      <button id="hamburger" aria-label="Abrir menú" class="hamburger">&#9776;</button>
-    </div>
-  </header>
+    <nav id="filtros"></nav>
 
-  <!-- Off-canvas menu (derecha) -->
-  <aside id="offcanvas" class="offcanvas" aria-hidden="true">
-    <button id="offcanvas-close" class="offcanvas-close" aria-label="Cerrar">✕</button>
-    <nav class="offcanvas-nav">
-      <input id="off-search" placeholder="Buscar..." />
-      <h3>Filtros rápidos</h3>
-      <div class="off-filters">
-        <label><input type="checkbox" data-filter="gratis"> Gratis</label>
-        <label><input type="checkbox" data-filter="ninos"> Para niños</label>
-        <label><input type="checkbox" data-filter="noche"> Nocturno</label>
-      </div>
-      <h3>Secciones</h3>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Mapa</a></li>
-        <li><a href="#">Ajustes</a></li>
-      </ul>
-    </nav>
-  </aside>
+    <main id="contenedorNoticias"></main>
 
-  <!-- Mensaje simulación -->
-  <div id="api-banner" class="api-banner">Mostrando datos simulados mientras se conecta a la API real.</div>
+    <button id="verMas">Ver más</button>
 
-  <!-- Search + map -->
-  <main>
-    <section class="search-map">
-      <div class="search-row">
-        <input id="search-input" type="search" placeholder="¿Qué hay hoy?" />
-        <button id="find-near">Cerca</button>
-      </div>
-
-      <div id="map" class="map"></div>
-    </section>
-
-    <!-- Categories chips (scroll horizontal) -->
-    <section class="chips" id="chips-container" role="toolbar" aria-label="Categorías"></section>
-
-    <!-- Filters row -->
-    <section class="filters-row">
-      <select id="select-lugar"><option value="">Todos los lugares</option></select>
-      <select id="select-tipo"><option value="">Todos los tipos</option></select>
-    </section>
-
-    <!-- Grid de tarjetas -->
-    <section id="cards-container" class="cards-grid" aria-live="polite"></section>
-
-    <div class="ver-mas-wrap">
-      <button id="btn-ver-mas" class="btn-ver-mas">Ver más</button>
-    </div>
-  </main>
-
-  <!-- Modal detalle -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-inner">
-      <button id="modal-close" class="modal-close" aria-label="Cerrar modal">✕</button>
-      <img id="modal-img" alt="Imagen evento" />
-      <h2 id="modal-title"></h2>
-      <p id="modal-category"></p>
-      <p id="modal-desc"></p>
-      <p id="modal-place-time"></p>
-      <div id="modal-actions"></div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/pocketbase/dist/pocketbase.umd.js"></script>
-  <script src="js/main.js"></script>
+    <script src="js/pocketbaseClient.js"></script>
+    <script src="js/filtros.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
